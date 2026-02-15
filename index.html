@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Akashie Friday Eugene | Virtual Assistant Portfolio</title>
+  <meta name="description" content="Akashie Friday Eugene is a professional virtual assistant offering reliable remote support in administration, documentation, data tasks, and digital operations." />
+  <meta name="keywords" content="Virtual Assistant, Administrative Support, Data Entry, Document Preparation, Remote Assistant, Akashie Friday Eugene" />
+  <meta property="og:title" content="Akashie Friday Eugene | Virtual Assistant Portfolio" />
+  <meta property="og:description" content="Professional virtual assistant portfolio with services, work samples, and certificates." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="img/friday-pic.jpeg" />
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Manrope', 'sans-serif'],
+            display: ['Fraunces', 'serif'],
+          },
+          colors: {
+            ink: '#18212f',
+            peach: '#ff8f6b',
+            teal: '#1e8e89',
+          },
+          keyframes: {
+            floatSoft: {
+              '0%, 100%': { transform: 'translateY(0px)' },
+              '50%': { transform: 'translateY(-10px)' },
+            },
+          },
+          animation: {
+            floatSoft: 'floatSoft 6s ease-in-out infinite',
+          },
+        },
+      },
+    };
+  </script>
+
+  <style>
+    :root {
+      --panel: rgba(255, 255, 255, 0.78);
+      --line: rgba(24, 33, 47, 0.1);
+    }
+
+    body {
+      background:
+        radial-gradient(900px 480px at 10% -5%, rgba(255, 143, 107, 0.18), transparent 50%),
+        radial-gradient(900px 500px at 100% 0%, rgba(30, 142, 137, 0.17), transparent 50%),
+        linear-gradient(180deg, #fffdf9 0%, #f5f7fb 100%);
+    }
+
+    .glass {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      backdrop-filter: blur(12px);
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(26px);
+      transition: opacity .7s ease, transform .7s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .work-tile img {
+      transition: transform .45s ease;
+    }
+
+    .work-tile:hover img {
+      transform: scale(1.06);
+    }
+
+    .faq details[open] summary {
+      color: #1e8e89;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .reveal {
+        opacity: 1;
+        transform: none;
+        transition: none;
+      }
+
+      .work-tile img {
+        transition: none;
+      }
+    }
+  </style>
+</head>
+<body class="text-ink antialiased selection:bg-peach/30">
+  <a href="https://wa.me/2348133842204" target="_blank" rel="noopener" class="fixed right-5 bottom-5 z-50 rounded-full bg-teal px-5 py-3 text-sm font-bold text-white shadow-xl hover:bg-ink transition">
+    Chat on WhatsApp
+  </a>
+
+  <header class="sticky top-0 z-40 border-b border-ink/10 bg-white/85 backdrop-blur">
+    <nav class="mx-auto flex max-w-6xl items-center justify-between px-5 py-4 md:px-8">
+      <a href="#top" class="font-display text-2xl">A.F.E<span class="text-peach">.</span></a>
+
+      <div class="hidden items-center gap-7 text-sm font-semibold md:flex">
+        <a href="#about" class="hover:text-teal">About</a>
+        <a href="#services" class="hover:text-teal">Services</a>
+        <a href="#process" class="hover:text-teal">Process</a>
+        <a href="#work" class="hover:text-teal">Work</a>
+        <a href="#certificates" class="hover:text-teal">Certificates</a>
+        <a href="#faq" class="hover:text-teal">FAQ</a>
+        <a href="#contact" class="hover:text-teal">Contact</a>
+      </div>
+
+      <div class="flex items-center gap-3">
+        <a href="mailto:fridayakashie@gmail.com" class="hidden rounded-full bg-ink px-4 py-2 text-sm font-bold text-white hover:bg-teal transition md:inline-block">Hire Me</a>
+        <button id="menuBtn" aria-label="Toggle menu" aria-expanded="false" class="rounded-lg border border-ink/20 px-3 py-2 text-sm font-semibold md:hidden">Menu</button>
+      </div>
+    </nav>
+
+    <div id="mobileMenu" class="hidden border-t border-ink/10 bg-white md:hidden">
+      <div class="mx-auto flex max-w-6xl flex-col gap-2 px-5 py-4 text-sm font-semibold">
+        <a href="#about" class="rounded-lg px-3 py-2 hover:bg-teal/10" data-close-menu>About</a>
+        <a href="#services" class="rounded-lg px-3 py-2 hover:bg-teal/10" data-close-menu>Services</a>
+        <a href="#process" class="rounded-lg px-3 py-2 hover:bg-teal/10" data-close-menu>Process</a>
+        <a href="#work" class="rounded-lg px-3 py-2 hover:bg-teal/10" data-close-menu>Work</a>
+        <a href="#certificates" class="rounded-lg px-3 py-2 hover:bg-teal/10" data-close-menu>Certificates</a>
+        <a href="#faq" class="rounded-lg px-3 py-2 hover:bg-teal/10" data-close-menu>FAQ</a>
+        <a href="#contact" class="rounded-lg bg-ink px-3 py-2 text-white" data-close-menu>Contact</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="mx-auto grid max-w-6xl gap-10 px-5 pb-16 pt-16 md:grid-cols-[1.05fr_.95fr] md:px-8 md:pt-24">
+      <div class="reveal">
+        <p class="mb-5 inline-flex items-center rounded-full border border-peach/30 bg-peach/10 px-4 py-2 text-xs font-bold uppercase tracking-wider text-peach">Virtual Assistant • Remote Support • Fast Turnaround</p>
+        <h1 class="font-display text-4xl leading-tight sm:text-5xl md:text-6xl">Akashie Friday Eugene</h1>
+        <p class="mt-4 max-w-xl text-lg text-ink/75">Professional virtual assistant helping founders, students, and professionals stay organized with document prep, digital admin, and communication support.</p>
+        <div class="mt-8 flex flex-wrap gap-4">
+          <a href="#contact" class="rounded-xl bg-ink px-6 py-3 font-bold text-white hover:bg-teal transition">Book a Call</a>
+          <a href="#work" class="rounded-xl border border-ink/25 bg-white px-6 py-3 font-bold hover:border-teal hover:text-teal transition">View Work</a>
+        </div>
+        <div class="mt-9 grid grid-cols-3 gap-3 text-center text-sm sm:max-w-md">
+          <div class="glass rounded-xl px-3 py-4">
+            <p class="text-2xl font-extrabold text-teal">12+</p>
+            <p class="text-ink/65">Work Samples</p>
+          </div>
+          <div class="glass rounded-xl px-3 py-4">
+            <p class="text-2xl font-extrabold text-teal">4</p>
+            <p class="text-ink/65">Certificates</p>
+          </div>
+          <div class="glass rounded-xl px-3 py-4">
+            <p class="text-2xl font-extrabold text-teal">24h</p>
+            <p class="text-ink/65">Typical Reply</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="reveal relative mx-auto max-w-md">
+        <div class="absolute -left-4 -top-4 -z-10 h-full w-full rounded-[2rem] bg-peach/25 animate-floatSoft"></div>
+        <img src="img/friday-pic.jpeg" alt="Portrait of Akashie Friday Eugene" class="w-full rounded-[2rem] border border-ink/10 object-cover shadow-2xl" />
+      </div>
+    </section>
+
+    <section id="about" class="mx-auto max-w-6xl px-5 pb-8 md:px-8">
+      <div class="reveal glass rounded-3xl p-8 md:p-10">
+        <h2 class="font-display text-3xl">About Me</h2>
+        <p class="mt-4 max-w-4xl text-ink/75">I deliver reliable virtual support across documentation, form processing, data handling, and visual communication. My workflow is clear, deadline-focused, and built around accuracy so clients can focus on growth instead of repetitive tasks.</p>
+      </div>
+    </section>
+
+    <section id="services" class="mx-auto max-w-6xl px-5 py-12 md:px-8">
+      <div class="mb-8 reveal">
+        <h2 class="font-display text-3xl">Core Services</h2>
+        <p class="mt-2 text-ink/70">Flexible virtual assistant support for individuals, teams, and business owners.</p>
+      </div>
+      <div class="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+        <article class="reveal rounded-2xl border border-ink/10 bg-white p-6 shadow-sm"><h3 class="text-xl font-bold">Administrative Support</h3><p class="mt-2 text-ink/70">Inbox handling, scheduling, data entry, and structured follow-ups to keep daily operations organized.</p></article>
+        <article class="reveal rounded-2xl border border-ink/10 bg-white p-6 shadow-sm"><h3 class="text-xl font-bold">Document Preparation</h3><p class="mt-2 text-ink/70">Professional letters, reports, forms, applications, and polished files ready for submission.</p></article>
+        <article class="reveal rounded-2xl border border-ink/10 bg-white p-6 shadow-sm"><h3 class="text-xl font-bold">Research & Data Tasks</h3><p class="mt-2 text-ink/70">Internet research, lead collection, summaries, and spreadsheet cleanup with clear formatting.</p></article>
+        <article class="reveal rounded-2xl border border-ink/10 bg-white p-6 shadow-sm"><h3 class="text-xl font-bold">Design Assistance</h3><p class="mt-2 text-ink/70">Simple branded visuals, social post designs, and presentation layouts for stronger communication.</p></article>
+        <article class="reveal rounded-2xl border border-ink/10 bg-white p-6 shadow-sm"><h3 class="text-xl font-bold">Client Communication</h3><p class="mt-2 text-ink/70">Prompt, professional responses through WhatsApp and email with attention to tone and detail.</p></article>
+        <article class="reveal rounded-2xl border border-ink/10 bg-white p-6 shadow-sm"><h3 class="text-xl font-bold">Workflow Setup</h3><p class="mt-2 text-ink/70">Task boards, templates, and repeatable systems to improve consistency and team productivity.</p></article>
+      </div>
+    </section>
+
+    <section id="process" class="mx-auto max-w-6xl px-5 py-12 md:px-8">
+      <div class="mb-8 reveal">
+        <h2 class="font-display text-3xl">How I Work</h2>
+        <p class="mt-2 text-ink/70">Simple workflow designed for speed, clarity, and predictable delivery.</p>
+      </div>
+      <div class="grid gap-4 md:grid-cols-4">
+        <article class="reveal rounded-2xl border border-ink/10 bg-white p-5"><p class="text-xs font-bold uppercase tracking-wider text-teal">Step 1</p><h3 class="mt-2 text-lg font-bold">Task Brief</h3><p class="mt-2 text-sm text-ink/70">You send your objective, files, and deadline by email or WhatsApp.</p></article>
+        <article class="reveal rounded-2xl border border-ink/10 bg-white p-5"><p class="text-xs font-bold uppercase tracking-wider text-teal">Step 2</p><h3 class="mt-2 text-lg font-bold">Scope & Plan</h3><p class="mt-2 text-sm text-ink/70">I confirm deliverables, timeline, and expected output format.</p></article>
+        <article class="reveal rounded-2xl border border-ink/10 bg-white p-5"><p class="text-xs font-bold uppercase tracking-wider text-teal">Step 3</p><h3 class="mt-2 text-lg font-bold">Execution</h3><p class="mt-2 text-sm text-ink/70">Work is completed with updates when needed and quality checks before handoff.</p></article>
+        <article class="reveal rounded-2xl border border-ink/10 bg-white p-5"><p class="text-xs font-bold uppercase tracking-wider text-teal">Step 4</p><h3 class="mt-2 text-lg font-bold">Delivery</h3><p class="mt-2 text-sm text-ink/70">You receive finalized files and support for any quick refinements.</p></article>
+      </div>
+    </section>
+
+    <section id="work" class="mx-auto max-w-6xl px-5 py-12 md:px-8">
+      <div class="mb-8 reveal">
+        <h2 class="font-display text-3xl">Selected Work</h2>
+        <p class="mt-2 text-ink/70">A visual snapshot of completed tasks and project output. Click any image to preview.</p>
+      </div>
+      <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        <button class="work-tile reveal overflow-hidden rounded-2xl border border-ink/10 bg-white text-left" data-lightbox="img/works/01.jpeg"><img src="img/works/01.jpeg" alt="Work sample 1" class="h-64 w-full object-cover" /></button>
+        <button class="work-tile reveal overflow-hidden rounded-2xl border border-ink/10 bg-white text-left" data-lightbox="img/works/02.jpeg"><img src="img/works/02.jpeg" alt="Work sample 2" class="h-64 w-full object-cover" /></button>
+        <button class="work-tile reveal overflow-hidden rounded-2xl border border-ink/10 bg-white text-left" data-lightbox="img/works/03.jpeg"><img src="img/works/03.jpeg" alt="Work sample 3" class="h-64 w-full object-cover" /></button>
+        <button class="work-tile reveal overflow-hidden rounded-2xl border border-ink/10 bg-white text-left" data-lightbox="img/works/04.jpeg"><img src="img/works/04.jpeg" alt="Work sample 4" class="h-64 w-full object-cover" /></button>
+        <button class="work-tile reveal overflow-hidden rounded-2xl border border-ink/10 bg-white text-left" data-lightbox="img/works/05.jpeg"><img src="img/works/05.jpeg" alt="Work sample 5" class="h-64 w-full object-cover" /></button>
+        <button class="work-tile reveal overflow-hidden rounded-2xl border border-ink/10 bg-white text-left" data-lightbox="img/works/06.jpeg"><img src="img/works/06.jpeg" alt="Work sample 6" class="h-64 w-full object-cover" /></button>
+        <button class="work-tile reveal overflow-hidden rounded-2xl border border-ink/10 bg-white text-left" data-lightbox="img/works/07.jpeg"><img src="img/works/07.jpeg" alt="Work sample 7" class="h-64 w-full object-cover" /></button>
+        <button class="work-tile reveal overflow-hidden rounded-2xl border border-ink/10 bg-white text-left" data-lightbox="img/works/08.jpeg"><img src="img/works/08.jpeg" alt="Work sample 8" class="h-64 w-full object-cover" /></button>
+        <button class="work-tile reveal overflow-hidden rounded-2xl border border-ink/10 bg-white text-left" data-lightbox="img/works/09.jpeg"><img src="img/works/09.jpeg" alt="Work sample 9" class="h-64 w-full object-cover" /></button>
+        <button class="work-tile reveal overflow-hidden rounded-2xl border border-ink/10 bg-white text-left" data-lightbox="img/works/10.jpeg"><img src="img/works/10.jpeg" alt="Work sample 10" class="h-64 w-full object-cover" /></button>
+        <button class="work-tile reveal overflow-hidden rounded-2xl border border-ink/10 bg-white text-left" data-lightbox="img/works/11.jpeg"><img src="img/works/11.jpeg" alt="Work sample 11" class="h-64 w-full object-cover" /></button>
+        <button class="work-tile reveal overflow-hidden rounded-2xl border border-ink/10 bg-white text-left" data-lightbox="img/works/12.jpeg"><img src="img/works/12.jpeg" alt="Work sample 12" class="h-64 w-full object-cover" /></button>
+      </div>
+    </section>
+
+    <section id="testimonials" class="mx-auto max-w-6xl px-5 py-12 md:px-8">
+      <div class="mb-8 reveal">
+        <h2 class="font-display text-3xl">Client Feedback</h2>
+        <p class="mt-2 text-ink/70">Examples of the experience clients typically get when working with me.</p>
+      </div>
+      <div class="grid gap-4 md:grid-cols-3">
+        <article class="reveal rounded-2xl border border-ink/10 bg-white p-6"><p class="text-ink/80">"Fast delivery, clear communication, and zero stress. Every file arrived clean and ready to use."</p><p class="mt-4 text-sm font-semibold text-teal">Startup Founder</p></article>
+        <article class="reveal rounded-2xl border border-ink/10 bg-white p-6"><p class="text-ink/80">"I needed urgent admin help for applications and follow-ups. Everything was handled professionally."</p><p class="mt-4 text-sm font-semibold text-teal">Job Seeker</p></article>
+        <article class="reveal rounded-2xl border border-ink/10 bg-white p-6"><p class="text-ink/80">"Reliable support for recurring tasks. Great attention to detail and very responsive on WhatsApp."</p><p class="mt-4 text-sm font-semibold text-teal">Small Business Owner</p></article>
+      </div>
+    </section>
+
+    <section id="certificates" class="mx-auto max-w-6xl px-5 py-12 md:px-8">
+      <div class="mb-8 reveal">
+        <h2 class="font-display text-3xl">Certificates</h2>
+        <p class="mt-2 text-ink/70">Training and credentials that support my service delivery.</p>
+      </div>
+      <div class="grid gap-4 md:grid-cols-2">
+        <a class="reveal flex items-center justify-between rounded-2xl border border-ink/10 bg-white p-5 hover:border-teal hover:bg-teal/5" href="certifitates/Akashie Friday Eugene - Certificate.pdf" target="_blank" rel="noopener"><span class="font-semibold">Akashie Friday Eugene - Certificate</span><span class="text-teal font-bold">Open PDF</span></a>
+        <a class="reveal flex items-center justify-between rounded-2xl border border-ink/10 bg-white p-5 hover:border-teal hover:bg-teal/5" href="certifitates/Akashie degree Cert.pdf" target="_blank" rel="noopener"><span class="font-semibold">Akashie Degree Certificate</span><span class="text-teal font-bold">Open PDF</span></a>
+        <a class="reveal flex items-center justify-between rounded-2xl border border-ink/10 bg-white p-5 hover:border-teal hover:bg-teal/5" href="certifitates/Akashie Friday -Eugene -Data Science.pdf" target="_blank" rel="noopener"><span class="font-semibold">Data Science Certificate</span><span class="text-teal font-bold">Open PDF</span></a>
+        <a class="reveal flex items-center justify-between rounded-2xl border border-ink/10 bg-white p-5 hover:border-teal hover:bg-teal/5" href="certifitates/Akashie NYSC CERT.pdf" target="_blank" rel="noopener"><span class="font-semibold">NYSC Certificate</span><span class="text-teal font-bold">Open PDF</span></a>
+      </div>
+    </section>
+
+    <section id="faq" class="mx-auto max-w-6xl px-5 py-12 md:px-8">
+      <div class="mb-8 reveal">
+        <h2 class="font-display text-3xl">Frequently Asked Questions</h2>
+      </div>
+      <div class="faq grid gap-4">
+        <details class="reveal rounded-2xl border border-ink/10 bg-white p-5">
+          <summary class="cursor-pointer font-semibold">What kind of tasks can I send?</summary>
+          <p class="mt-3 text-ink/70">Administrative, documentation, online research, formatting, and routine business support tasks are all welcome.</p>
+        </details>
+        <details class="reveal rounded-2xl border border-ink/10 bg-white p-5">
+          <summary class="cursor-pointer font-semibold">How fast do you respond?</summary>
+          <p class="mt-3 text-ink/70">Most new requests receive a response within 24 hours, often sooner for urgent items.</p>
+        </details>
+        <details class="reveal rounded-2xl border border-ink/10 bg-white p-5">
+          <summary class="cursor-pointer font-semibold">Can I request revisions?</summary>
+          <p class="mt-3 text-ink/70">Yes. Small revisions are supported so the final output matches your expected standard.</p>
+        </details>
+      </div>
+    </section>
+
+    <section id="contact" class="mx-auto max-w-6xl px-5 pb-16 pt-10 md:px-8">
+      <div class="reveal rounded-[2rem] bg-ink p-8 text-white md:p-12">
+        <h2 class="font-display text-3xl">Need a dependable virtual assistant?</h2>
+        <p class="mt-3 max-w-2xl text-white/75">Send your task details, timeline, and expected outcome. I will respond with availability and a clear action plan.</p>
+        <div class="mt-8 flex flex-wrap gap-4">
+          <a href="tel:+2348133842204" class="rounded-xl bg-peach px-6 py-3 font-bold text-ink hover:bg-white transition">Call: +234 813 384 2204</a>
+          <a href="mailto:fridayakashie@gmail.com" class="rounded-xl border border-white/30 px-6 py-3 font-bold hover:bg-white hover:text-ink transition">Email</a>
+          <a href="https://wa.me/2348133842204" target="_blank" rel="noopener" class="rounded-xl border border-white/30 px-6 py-3 font-bold hover:bg-white hover:text-ink transition">WhatsApp</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="border-t border-ink/10 bg-white/75">
+    <div class="mx-auto flex max-w-6xl flex-col gap-3 px-5 py-6 text-sm text-ink/70 md:flex-row md:items-center md:justify-between md:px-8">
+      <p>&copy; <span id="year"></span> Akashie Friday Eugene. Virtual Assistant Portfolio.</p>
+      <p>Available for remote projects.</p>
+    </div>
+  </footer>
+
+  <dialog id="lightbox" class="w-[min(95vw,920px)] rounded-2xl border border-ink/10 p-0 shadow-2xl backdrop:bg-black/75">
+    <div class="relative bg-white">
+      <button id="closeLightbox" class="absolute right-3 top-3 rounded-lg bg-black/70 px-3 py-2 text-sm font-semibold text-white">Close</button>
+      <img id="lightboxImage" src="" alt="Expanded work sample" class="max-h-[85vh] w-full object-contain" />
+    </div>
+  </dialog>
+
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Akashie Friday Eugene",
+      "jobTitle": "Virtual Assistant",
+      "email": "fridayakashie@gmail.com",
+      "telephone": "+2348133842204",
+      "url": "#top"
+    }
+  </script>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    const items = document.querySelectorAll('.reveal');
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+    items.forEach((el) => io.observe(el));
+
+    const menuBtn = document.getElementById('menuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    const closeMenuLinks = document.querySelectorAll('[data-close-menu]');
+
+    menuBtn.addEventListener('click', () => {
+      const isHidden = mobileMenu.classList.contains('hidden');
+      mobileMenu.classList.toggle('hidden');
+      menuBtn.setAttribute('aria-expanded', isHidden ? 'true' : 'false');
+    });
+
+    closeMenuLinks.forEach((link) => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.add('hidden');
+        menuBtn.setAttribute('aria-expanded', 'false');
+      });
+    });
+
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImage = document.getElementById('lightboxImage');
+    const closeLightbox = document.getElementById('closeLightbox');
+    const workButtons = document.querySelectorAll('[data-lightbox]');
+
+    workButtons.forEach((button) => {
+      button.addEventListener('click', () => {
+        lightboxImage.src = button.getAttribute('data-lightbox');
+        lightbox.showModal();
+      });
+    });
+
+    closeLightbox.addEventListener('click', () => lightbox.close());
+
+    lightbox.addEventListener('click', (event) => {
+      const dialogDimensions = lightbox.getBoundingClientRect();
+      const clickedOutside =
+        event.clientX < dialogDimensions.left ||
+        event.clientX > dialogDimensions.right ||
+        event.clientY < dialogDimensions.top ||
+        event.clientY > dialogDimensions.bottom;
+      if (clickedOutside) lightbox.close();
+    });
+  </script>
+</body>
+</html>
